@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Resume Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AI Resume Generator</h1>
+        <form id="resumeForm">
+            <div class="form-group">
+                <label for="resumeUpload">Upload Resume (PDF):</label>
+                <input type="file" id="resumeUpload" name="resume" accept=".pdf" required>
+            </div>
+            <div class="form-group">
+                <label for="linkedinUrl">LinkedIn Job URL:</label>
+                <input type="url" id="linkedinUrl" name="linkedinUrl" placeholder="https://www.linkedin.com/jobs/view/..." required>
+            </div>
+            <div class="form-group">
+                <label>Enhancement Options:</label>
+                <label><input type="checkbox" name="enhanceSummary" checked> Enhance Summary</label><br>
+                <label><input type="checkbox" name="enhanceExperience" checked> Enhance Experience</label><br>
+                <label><input type="checkbox" name="enhanceSkills" checked> Enhance Skills</label>
+            </div>
+            <button type="submit">Generate AI Resume</button>
+            <div id="loading" class="hidden">Generating resume, please wait...</div>
+            <div id="preview" class="hidden">
+                <h3>Preview of AI Changes</h3>
+                <div>
+                    <strong>Summary:</strong>
+                    <pre id="previewSummary"></pre>
+                </div>
+                <div>
+                    <strong>Skills:</strong>
+                    <pre id="previewSkills"></pre>
+                </div>
+                <div>
+                    <strong>Experience:</strong>
+                    <pre id="previewExperience"></pre>
+                </div>
+            </div>
+            <div id="output" class="hidden">
+                <a id="downloadLink" download>DOWNLOAD PDF</a>
+            </div>
+        </form>
+    </div>
+    <div id="toast" class="toast hidden">
+        <span id="toastMessage"></span>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
